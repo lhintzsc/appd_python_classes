@@ -1,0 +1,983 @@
+{
+    "schemaVersion": null,
+    "dashboardFormatVersion": "4.0",
+    "name": "{TITLE}",
+    "description": null,
+    "properties": null,
+    "templateEntityType": "APPLICATION_COMPONENT_NODE",
+    "associatedEntityTemplates": null,
+    "minutesBeforeAnchorTime": -1,
+    "startDate": null,
+    "endDate": null,
+    "refreshInterval": 120000,
+    "backgroundColor": 15856629,
+    "color": 15856629,
+    "height": 768,
+    "width": 1024,
+    "canvasType": "CANVAS_TYPE_GRID",
+    "layoutType": "",
+    "widgetTemplates": [
+        {
+            "widgetType": "PieWidget",
+            "title": "",
+            "height": 3,
+            "width": 2,
+            "minHeight": 0,
+            "minWidth": 0,
+            "x": 1,
+            "y": 1,
+            "label": null,
+            "description": null,
+            "drillDownUrl": null,
+            "useMetricBrowserAsDrillDown": true,
+            "drillDownActionType": null,
+            "backgroundColor": 16777215,
+            "backgroundColors": null,
+            "backgroundColorsStr": "16777215,16777215",
+            "color": 1646891,
+            "fontSize": 12,
+            "useAutomaticFontSize": false,
+            "borderEnabled": false,
+            "borderThickness": 0,
+            "borderColor": 14408667,
+            "backgroundAlpha": 1,
+            "showValues": true,
+            "formatNumber": true,
+            "numDecimals": 0,
+            "removeZeros": true,
+            "compactMode": false,
+            "showTimeRange": false,
+            "renderIn3D": false,
+            "showLegend": true,
+            "legendPosition": "POSITION_BOTTOM",
+            "legendColumnCount": 1,
+            "startTime": null,
+            "endTime": null,
+            "minutesBeforeAnchorTime": 15,
+            "isGlobal": true,
+            "propertiesMap": null,
+            "dataSeriesTemplates": [
+                {
+                    "seriesType": "LINE",
+                    "metricType": null,
+                    "showRawMetricName": false,
+                    "colorPalette": null,
+                    "name": "Series 1",
+                    "metricMatchCriteriaTemplate": {
+                        "entityMatchCriteria": {
+                            "matchCriteriaType": "SpecificEntities",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "agentTypes": null,
+                            "entityNames": [
+                                {
+                                    "applicationName": "Server & Infrastructure Monitoring",
+                                    "entityType": "APPLICATION_COMPONENT_NODE",
+                                    "entityName": "{SERVER}",
+                                    "scopingEntityType": "APPLICATION_COMPONENT",
+                                    "scopingEntityName": "{SERVER_HIERARCHY}",
+                                    "subtype": null
+                                }
+                            ],
+                            "summary": false
+                        },
+                        "metricExpressionTemplate": {
+                            "metricExpressionType": "Boolean",
+                            "operator": {
+                                "type": "PLUS"
+                            },
+                            "expression1": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "SUM",
+                                "displayName": "Publish_Q1",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Messages|Published Per Min"
+                            },
+                            "expression2": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "SUM",
+                                "displayName": "Publish_Q2",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q2}|Messages|Published Per Min"
+                            }
+                        },
+                        "rollupMetricData": true,
+                        "expressionString": "{Publish_Q1}+{Publish_Q2}",
+                        "useActiveBaseline": false,
+                        "sortResultsAscending": false,
+                        "maxResults": 20,
+                        "evaluationScopeType": null,
+                        "baselineName": null,
+                        "applicationName": "Server & Infrastructure Monitoring",
+                        "metricDisplayNameStyle": "DISPLAY_STYLE_CUSTOM",
+                        "metricDisplayNameCustomFormat": "Published per Min [SUM]"
+                    },
+                    "axisPosition": null
+                },
+                {
+                    "seriesType": "LINE",
+                    "metricType": null,
+                    "showRawMetricName": false,
+                    "colorPalette": null,
+                    "name": "Series 1 1",
+                    "metricMatchCriteriaTemplate": {
+                        "entityMatchCriteria": {
+                            "matchCriteriaType": "SpecificEntities",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "agentTypes": null,
+                            "entityNames": [
+                                {
+                                    "applicationName": "Server & Infrastructure Monitoring",
+                                    "entityType": "APPLICATION_COMPONENT_NODE",
+                                    "entityName": "{SERVER}",
+                                    "scopingEntityType": "APPLICATION_COMPONENT",
+                                    "scopingEntityName": "{SERVER_HIERARCHY}",
+                                    "subtype": null
+                                }
+                            ],
+                            "summary": false
+                        },
+                        "metricExpressionTemplate": {
+                            "metricExpressionType": "Boolean",
+                            "operator": {
+                                "type": "PLUS"
+                            },
+                            "expression1": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "SUM",
+                                "displayName": "Delivered_Q1",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Messages|Delivered (Total) Per Min"
+                            },
+                            "expression2": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "SUM",
+                                "displayName": "Delivered_Q2",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q2}|Messages|Delivered (Total) Per Min"
+                            }
+                        },
+                        "rollupMetricData": true,
+                        "expressionString": "{Delivered_Q1}+{Delivered_Q2}",
+                        "useActiveBaseline": false,
+                        "sortResultsAscending": false,
+                        "maxResults": 20,
+                        "evaluationScopeType": null,
+                        "baselineName": null,
+                        "applicationName": "Server & Infrastructure Monitoring",
+                        "metricDisplayNameStyle": "DISPLAY_STYLE_CUSTOM",
+                        "metricDisplayNameCustomFormat": "Delivered per Min [SUM]"
+                    },
+                    "axisPosition": null
+                }
+            ],
+            "showLabels": false,
+            "showPercentValues": null
+        },
+        {
+            "widgetType": "GraphWidget",
+            "title": null,
+            "height": 2,
+            "width": 9,
+            "minHeight": 0,
+            "minWidth": 0,
+            "x": 3,
+            "y": 0,
+            "label": null,
+            "description": null,
+            "drillDownUrl": null,
+            "useMetricBrowserAsDrillDown": true,
+            "drillDownActionType": null,
+            "backgroundColor": 16777215,
+            "backgroundColors": null,
+            "backgroundColorsStr": "16777215,16777215",
+            "color": 1646891,
+            "fontSize": 12,
+            "useAutomaticFontSize": false,
+            "borderEnabled": false,
+            "borderThickness": 0,
+            "borderColor": 14408667,
+            "backgroundAlpha": 1,
+            "showValues": false,
+            "formatNumber": true,
+            "numDecimals": 0,
+            "removeZeros": true,
+            "compactMode": false,
+            "showTimeRange": false,
+            "renderIn3D": false,
+            "showLegend": true,
+            "legendPosition": "POSITION_BOTTOM",
+            "legendColumnCount": 1,
+            "startTime": null,
+            "endTime": null,
+            "minutesBeforeAnchorTime": 15,
+            "isGlobal": true,
+            "propertiesMap": null,
+            "dataSeriesTemplates": [
+                {
+                    "seriesType": "LINE",
+                    "metricType": null,
+                    "showRawMetricName": false,
+                    "colorPalette": null,
+                    "name": "Series 1",
+                    "metricMatchCriteriaTemplate": {
+                        "entityMatchCriteria": {
+                            "matchCriteriaType": "SpecificEntities",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "agentTypes": null,
+                            "entityNames": [
+                                {
+                                    "applicationName": "Server & Infrastructure Monitoring",
+                                    "entityType": "APPLICATION_COMPONENT_NODE",
+                                    "entityName": "{SERVER}",
+                                    "scopingEntityType": "APPLICATION_COMPONENT",
+                                    "scopingEntityName": "{SERVER_HIERARCHY}",
+                                    "subtype": null
+                                }
+                            ],
+                            "summary": false
+                        },
+                        "metricExpressionTemplate": {
+                            "metricExpressionType": "Boolean",
+                            "operator": {
+                                "type": "PLUS"
+                            },
+                            "expression1": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Published_Q1",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Messages|Published Per Min"
+                            },
+                            "expression2": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Published_Q2",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q2}|Messages|Published Per Min"
+                            }
+                        },
+                        "rollupMetricData": false,
+                        "expressionString": "{Published_Q1}+{Published_Q2}",
+                        "useActiveBaseline": false,
+                        "sortResultsAscending": false,
+                        "maxResults": 20,
+                        "evaluationScopeType": null,
+                        "baselineName": null,
+                        "applicationName": "Server & Infrastructure Monitoring",
+                        "metricDisplayNameStyle": "DISPLAY_STYLE_CUSTOM",
+                        "metricDisplayNameCustomFormat": "Published per Min"
+                    },
+                    "axisPosition": "LEFT"
+                },
+                {
+                    "seriesType": "LINE",
+                    "metricType": null,
+                    "showRawMetricName": false,
+                    "colorPalette": null,
+                    "name": "Series 1 1",
+                    "metricMatchCriteriaTemplate": {
+                        "entityMatchCriteria": {
+                            "matchCriteriaType": "SpecificEntities",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "agentTypes": null,
+                            "entityNames": [
+                                {
+                                    "applicationName": "Server & Infrastructure Monitoring",
+                                    "entityType": "APPLICATION_COMPONENT_NODE",
+                                    "entityName": "{SERVER}",
+                                    "scopingEntityType": "APPLICATION_COMPONENT",
+                                    "scopingEntityName": "{SERVER_HIERARCHY}",
+                                    "subtype": null
+                                }
+                            ],
+                            "summary": false
+                        },
+                        "metricExpressionTemplate": {
+                            "metricExpressionType": "Boolean",
+                            "operator": {
+                                "type": "PLUS"
+                            },
+                            "expression1": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Delivered_Q1",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Messages|Delivered (Total) Per Min"
+                            },
+                            "expression2": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Delivered_Q2",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q2}|Messages|Delivered (Total) Per Min"
+                            }
+                        },
+                        "rollupMetricData": false,
+                        "expressionString": "{Delivered_Q1}+{Delivered_Q2}",
+                        "useActiveBaseline": false,
+                        "sortResultsAscending": false,
+                        "maxResults": 20,
+                        "evaluationScopeType": null,
+                        "baselineName": null,
+                        "applicationName": "Server & Infrastructure Monitoring",
+                        "metricDisplayNameStyle": "DISPLAY_STYLE_CUSTOM",
+                        "metricDisplayNameCustomFormat": "Delivered per Min"
+                    },
+                    "axisPosition": "LEFT"
+                }
+            ],
+            "verticalAxisLabel": null,
+            "hideHorizontalAxis": null,
+            "horizontalAxisLabel": null,
+            "axisType": "LINEAR",
+            "stackMode": null,
+            "multipleYAxis": null,
+            "customVerticalAxisMin": null,
+            "customVerticalAxisMax": null,
+            "showEvents": null,
+            "interpolateDataGaps": false,
+            "showAllTooltips": null,
+            "staticThresholdList": [],
+            "eventFilterTemplate": null
+        },
+        {
+            "widgetType": "GraphWidget",
+            "title": null,
+            "height": 2,
+            "width": 9,
+            "minHeight": 0,
+            "minWidth": 0,
+            "x": 3,
+            "y": 2,
+            "label": null,
+            "description": null,
+            "drillDownUrl": null,
+            "useMetricBrowserAsDrillDown": true,
+            "drillDownActionType": null,
+            "backgroundColor": 16777215,
+            "backgroundColors": null,
+            "backgroundColorsStr": "16777215,16777215",
+            "color": 1646891,
+            "fontSize": 12,
+            "useAutomaticFontSize": false,
+            "borderEnabled": false,
+            "borderThickness": 0,
+            "borderColor": 14408667,
+            "backgroundAlpha": 1,
+            "showValues": false,
+            "formatNumber": true,
+            "numDecimals": 0,
+            "removeZeros": true,
+            "compactMode": false,
+            "showTimeRange": false,
+            "renderIn3D": false,
+            "showLegend": true,
+            "legendPosition": "POSITION_BOTTOM",
+            "legendColumnCount": 1,
+            "startTime": null,
+            "endTime": null,
+            "minutesBeforeAnchorTime": 15,
+            "isGlobal": true,
+            "propertiesMap": null,
+            "dataSeriesTemplates": [
+                {
+                    "seriesType": "LINE",
+                    "metricType": null,
+                    "showRawMetricName": false,
+                    "colorPalette": null,
+                    "name": "Series 1",
+                    "metricMatchCriteriaTemplate": {
+                        "entityMatchCriteria": {
+                            "matchCriteriaType": "SpecificEntities",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "agentTypes": null,
+                            "entityNames": [
+                                {
+                                    "applicationName": "Server & Infrastructure Monitoring",
+                                    "entityType": "APPLICATION_COMPONENT_NODE",
+                                    "entityName": "{SERVER}",
+                                    "scopingEntityType": "APPLICATION_COMPONENT",
+                                    "scopingEntityName": "{SERVER_HIERARCHY}",
+                                    "subtype": null
+                                }
+                            ],
+                            "summary": false
+                        },
+                        "metricExpressionTemplate": {
+                            "metricExpressionType": "Boolean",
+                            "operator": {
+                                "type": "PLUS"
+                            },
+                            "expression1": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "pending_ack_q1",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Messages|Pending Acknowledgements"
+                            },
+                            "expression2": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "pending_ack_q2",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Messages|Pending Acknowledgements"
+                            }
+                        },
+                        "rollupMetricData": false,
+                        "expressionString": "{pending_ack_q1}+{pending_ack_q2}",
+                        "useActiveBaseline": false,
+                        "sortResultsAscending": false,
+                        "maxResults": 20,
+                        "evaluationScopeType": null,
+                        "baselineName": null,
+                        "applicationName": "Server & Infrastructure Monitoring",
+                        "metricDisplayNameStyle": "DISPLAY_STYLE_CUSTOM",
+                        "metricDisplayNameCustomFormat": "Pending Ack"
+                    },
+                    "axisPosition": "LEFT"
+                },
+                {
+                    "seriesType": "LINE",
+                    "metricType": null,
+                    "showRawMetricName": false,
+                    "colorPalette": null,
+                    "name": "Series 2",
+                    "metricMatchCriteriaTemplate": {
+                        "entityMatchCriteria": {
+                            "matchCriteriaType": "SpecificEntities",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "agentTypes": null,
+                            "entityNames": [
+                                {
+                                    "applicationName": "Server & Infrastructure Monitoring",
+                                    "entityType": "APPLICATION_COMPONENT_NODE",
+                                    "entityName": "{SERVER}",
+                                    "scopingEntityType": "APPLICATION_COMPONENT",
+                                    "scopingEntityName": "{SERVER_HIERARCHY}",
+                                    "subtype": null
+                                }
+                            ],
+                            "summary": false
+                        },
+                        "metricExpressionTemplate": {
+                            "metricExpressionType": "Boolean",
+                            "operator": {
+                                "type": "PLUS"
+                            },
+                            "expression1": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Redelivered_Q1",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Messages|Redelivered Per Min"
+                            },
+                            "expression2": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Redelivered_Q2",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q2}|Messages|Redelivered Per Min"
+                            }
+                        },
+                        "rollupMetricData": false,
+                        "expressionString": "{Redelivered_Q1}+{Redelivered_Q2}",
+                        "useActiveBaseline": false,
+                        "sortResultsAscending": false,
+                        "maxResults": 20,
+                        "evaluationScopeType": null,
+                        "baselineName": null,
+                        "applicationName": "Server & Infrastructure Monitoring",
+                        "metricDisplayNameStyle": "DISPLAY_STYLE_CUSTOM",
+                        "metricDisplayNameCustomFormat": "Redelivered per Min"
+                    },
+                    "axisPosition": null
+                }
+            ],
+            "verticalAxisLabel": null,
+            "hideHorizontalAxis": null,
+            "horizontalAxisLabel": null,
+            "axisType": "LINEAR",
+            "stackMode": null,
+            "multipleYAxis": null,
+            "customVerticalAxisMin": null,
+            "customVerticalAxisMax": null,
+            "showEvents": null,
+            "interpolateDataGaps": false,
+            "showAllTooltips": null,
+            "staticThresholdList": [],
+            "eventFilterTemplate": null
+        },
+        {
+            "widgetType": "MetricLabelWidget",
+            "title": "Consumers [Q1+Q2]",
+            "height": 1,
+            "width": 1,
+            "minHeight": 0,
+            "minWidth": 0,
+            "x": 0,
+            "y": 0,
+            "label": null,
+            "description": null,
+            "drillDownUrl": null,
+            "useMetricBrowserAsDrillDown": true,
+            "drillDownActionType": null,
+            "backgroundColor": 16777215,
+            "backgroundColors": null,
+            "backgroundColorsStr": "16777215,16777215",
+            "color": 1646891,
+            "fontSize": 12,
+            "useAutomaticFontSize": true,
+            "borderEnabled": false,
+            "borderThickness": 0,
+            "borderColor": 14408667,
+            "backgroundAlpha": 1,
+            "showValues": false,
+            "formatNumber": true,
+            "numDecimals": 2,
+            "removeZeros": true,
+            "compactMode": false,
+            "showTimeRange": false,
+            "renderIn3D": false,
+            "showLegend": null,
+            "legendPosition": null,
+            "legendColumnCount": null,
+            "startTime": null,
+            "endTime": null,
+            "minutesBeforeAnchorTime": 15,
+            "isGlobal": true,
+            "propertiesMap": null,
+            "dataSeriesTemplates": [
+                {
+                    "seriesType": "LINE",
+                    "metricType": null,
+                    "showRawMetricName": false,
+                    "colorPalette": null,
+                    "name": "Series 0",
+                    "metricMatchCriteriaTemplate": {
+                        "entityMatchCriteria": {
+                            "matchCriteriaType": "SpecificEntities",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "agentTypes": null,
+                            "entityNames": [
+                                {
+                                    "applicationName": "Server & Infrastructure Monitoring",
+                                    "entityType": "APPLICATION_COMPONENT_NODE",
+                                    "entityName": "{SERVER}",
+                                    "scopingEntityType": "APPLICATION_COMPONENT",
+                                    "scopingEntityName": "{SERVER_HIERARCHY}",
+                                    "subtype": null
+                                }
+                            ],
+                            "summary": false
+                        },
+                        "metricExpressionTemplate": {
+                            "metricExpressionType": "Boolean",
+                            "operator": {
+                                "type": "PLUS"
+                            },
+                            "expression1": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Consumer_Q1",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Consumers"
+                            },
+                            "expression2": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Consumer_Q2",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q2}|Consumers"
+                            }
+                        },
+                        "rollupMetricData": true,
+                        "expressionString": "{Consumer_Q1}+{Consumer_Q2}",
+                        "useActiveBaseline": false,
+                        "sortResultsAscending": false,
+                        "maxResults": 20,
+                        "evaluationScopeType": null,
+                        "baselineName": null,
+                        "applicationName": "Server & Infrastructure Monitoring",
+                        "metricDisplayNameStyle": "DISPLAY_STYLE_AUTO",
+                        "metricDisplayNameCustomFormat": null
+                    },
+                    "axisPosition": null
+                }
+            ],
+            "text": null,
+            "textAlign": "RIGHT",
+            "margin": 15,
+            "showLabel": false
+        },
+        {
+            "widgetType": "MetricLabelWidget",
+            "title": "Published [Q1+Q2]",
+            "height": 1,
+            "width": 1,
+            "minHeight": 0,
+            "minWidth": 0,
+            "x": 0,
+            "y": 1,
+            "label": null,
+            "description": null,
+            "drillDownUrl": null,
+            "useMetricBrowserAsDrillDown": true,
+            "drillDownActionType": null,
+            "backgroundColor": 16777215,
+            "backgroundColors": null,
+            "backgroundColorsStr": "16777215,16777215",
+            "color": 1646891,
+            "fontSize": 12,
+            "useAutomaticFontSize": true,
+            "borderEnabled": false,
+            "borderThickness": 0,
+            "borderColor": 14408667,
+            "backgroundAlpha": 1,
+            "showValues": false,
+            "formatNumber": true,
+            "numDecimals": 2,
+            "removeZeros": true,
+            "compactMode": false,
+            "showTimeRange": false,
+            "renderIn3D": false,
+            "showLegend": null,
+            "legendPosition": null,
+            "legendColumnCount": null,
+            "startTime": null,
+            "endTime": null,
+            "minutesBeforeAnchorTime": 15,
+            "isGlobal": true,
+            "propertiesMap": null,
+            "dataSeriesTemplates": [
+                {
+                    "seriesType": "LINE",
+                    "metricType": null,
+                    "showRawMetricName": false,
+                    "colorPalette": null,
+                    "name": "Series 0",
+                    "metricMatchCriteriaTemplate": {
+                        "entityMatchCriteria": {
+                            "matchCriteriaType": "SpecificEntities",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "agentTypes": null,
+                            "entityNames": [
+                                {
+                                    "applicationName": "Server & Infrastructure Monitoring",
+                                    "entityType": "APPLICATION_COMPONENT_NODE",
+                                    "entityName": "{SERVER}",
+                                    "scopingEntityType": "APPLICATION_COMPONENT",
+                                    "scopingEntityName": "{SERVER_HIERARCHY}",
+                                    "subtype": null
+                                }
+                            ],
+                            "summary": false
+                        },
+                        "metricExpressionTemplate": {
+                            "metricExpressionType": "Boolean",
+                            "operator": {
+                                "type": "PLUS"
+                            },
+                            "expression1": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Delivered_Q1",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Messages|Published"
+                            },
+                            "expression2": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Delivered_Q2",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q2}|Messages|Published"
+                            }
+                        },
+                        "rollupMetricData": true,
+                        "expressionString": "{Delivered_Q1}+{Delivered_Q2}",
+                        "useActiveBaseline": false,
+                        "sortResultsAscending": false,
+                        "maxResults": 20,
+                        "evaluationScopeType": null,
+                        "baselineName": null,
+                        "applicationName": "Server & Infrastructure Monitoring",
+                        "metricDisplayNameStyle": "DISPLAY_STYLE_AUTO",
+                        "metricDisplayNameCustomFormat": null
+                    },
+                    "axisPosition": null
+                }
+            ],
+            "text": null,
+            "textAlign": "RIGHT",
+            "margin": 15,
+            "showLabel": false
+        },
+        {
+            "widgetType": "MetricLabelWidget",
+            "title": "Delivered [Q1+Q2]",
+            "height": 1,
+            "width": 1,
+            "minHeight": 0,
+            "minWidth": 0,
+            "x": 0,
+            "y": 2,
+            "label": null,
+            "description": null,
+            "drillDownUrl": null,
+            "useMetricBrowserAsDrillDown": true,
+            "drillDownActionType": null,
+            "backgroundColor": 16777215,
+            "backgroundColors": null,
+            "backgroundColorsStr": "16777215,16777215",
+            "color": 1646891,
+            "fontSize": 12,
+            "useAutomaticFontSize": true,
+            "borderEnabled": false,
+            "borderThickness": 0,
+            "borderColor": 14408667,
+            "backgroundAlpha": 1,
+            "showValues": false,
+            "formatNumber": true,
+            "numDecimals": 2,
+            "removeZeros": true,
+            "compactMode": false,
+            "showTimeRange": false,
+            "renderIn3D": false,
+            "showLegend": null,
+            "legendPosition": null,
+            "legendColumnCount": null,
+            "startTime": null,
+            "endTime": null,
+            "minutesBeforeAnchorTime": 15,
+            "isGlobal": true,
+            "propertiesMap": null,
+            "dataSeriesTemplates": [
+                {
+                    "seriesType": "LINE",
+                    "metricType": null,
+                    "showRawMetricName": false,
+                    "colorPalette": null,
+                    "name": "Series 0",
+                    "metricMatchCriteriaTemplate": {
+                        "entityMatchCriteria": {
+                            "matchCriteriaType": "SpecificEntities",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "agentTypes": null,
+                            "entityNames": [
+                                {
+                                    "applicationName": "Server & Infrastructure Monitoring",
+                                    "entityType": "APPLICATION_COMPONENT_NODE",
+                                    "entityName": "{SERVER}",
+                                    "scopingEntityType": "APPLICATION_COMPONENT",
+                                    "scopingEntityName": "{SERVER_HIERARCHY}",
+                                    "subtype": null
+                                }
+                            ],
+                            "summary": false
+                        },
+                        "metricExpressionTemplate": {
+                            "metricExpressionType": "Boolean",
+                            "operator": {
+                                "type": "PLUS"
+                            },
+                            "expression1": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Delivered_Q1",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Messages|Delivered (Total)"
+                            },
+                            "expression2": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Delivered_Q2",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q2}|Messages|Delivered (Total)"
+                            }
+                        },
+                        "rollupMetricData": true,
+                        "expressionString": "{Delivered_Q1}+{Delivered_Q2}",
+                        "useActiveBaseline": false,
+                        "sortResultsAscending": false,
+                        "maxResults": 20,
+                        "evaluationScopeType": null,
+                        "baselineName": null,
+                        "applicationName": "Server & Infrastructure Monitoring",
+                        "metricDisplayNameStyle": "DISPLAY_STYLE_AUTO",
+                        "metricDisplayNameCustomFormat": null
+                    },
+                    "axisPosition": null
+                }
+            ],
+            "text": null,
+            "textAlign": "RIGHT",
+            "margin": 15,
+            "showLabel": false
+        },
+        {
+            "widgetType": "MetricLabelWidget",
+            "title": "Available [Q1+Q2]",
+            "height": 1,
+            "width": 1,
+            "minHeight": 0,
+            "minWidth": 0,
+            "x": 0,
+            "y": 3,
+            "label": null,
+            "description": null,
+            "drillDownUrl": null,
+            "useMetricBrowserAsDrillDown": true,
+            "drillDownActionType": null,
+            "backgroundColor": 16777215,
+            "backgroundColors": null,
+            "backgroundColorsStr": "16777215,16777215",
+            "color": 1646891,
+            "fontSize": 12,
+            "useAutomaticFontSize": true,
+            "borderEnabled": false,
+            "borderThickness": 0,
+            "borderColor": 14408667,
+            "backgroundAlpha": 1,
+            "showValues": false,
+            "formatNumber": true,
+            "numDecimals": 2,
+            "removeZeros": true,
+            "compactMode": false,
+            "showTimeRange": false,
+            "renderIn3D": false,
+            "showLegend": null,
+            "legendPosition": null,
+            "legendColumnCount": null,
+            "startTime": null,
+            "endTime": null,
+            "minutesBeforeAnchorTime": 15,
+            "isGlobal": true,
+            "propertiesMap": null,
+            "dataSeriesTemplates": [
+                {
+                    "seriesType": "LINE",
+                    "metricType": null,
+                    "showRawMetricName": false,
+                    "colorPalette": null,
+                    "name": "Series 0",
+                    "metricMatchCriteriaTemplate": {
+                        "entityMatchCriteria": {
+                            "matchCriteriaType": "SpecificEntities",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "agentTypes": null,
+                            "entityNames": [
+                                {
+                                    "applicationName": "Server & Infrastructure Monitoring",
+                                    "entityType": "APPLICATION_COMPONENT_NODE",
+                                    "entityName": "{SERVER}",
+                                    "scopingEntityType": "APPLICATION_COMPONENT",
+                                    "scopingEntityName": "{SERVER_HIERARCHY}",
+                                    "subtype": null
+                                }
+                            ],
+                            "summary": false
+                        },
+                        "metricExpressionTemplate": {
+                            "metricExpressionType": "Boolean",
+                            "operator": {
+                                "type": "PLUS"
+                            },
+                            "expression1": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Available_Q1",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q1}|Messages|Available"
+                            },
+                            "expression2": {
+                                "metricExpressionType": "Logical",
+                                "functionType": "VALUE",
+                                "displayName": "Available_Q2",
+                                "inputMetricText": false,
+                                "inputMetricPath": null,
+                                "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{Q2}|Messages|Available"
+                            }
+                        },
+                        "rollupMetricData": true,
+                        "expressionString": "{Available_Q1}+{Available_Q2}",
+                        "useActiveBaseline": false,
+                        "sortResultsAscending": false,
+                        "maxResults": 20,
+                        "evaluationScopeType": null,
+                        "baselineName": null,
+                        "applicationName": "Server & Infrastructure Monitoring",
+                        "metricDisplayNameStyle": "DISPLAY_STYLE_AUTO",
+                        "metricDisplayNameCustomFormat": null
+                    },
+                    "axisPosition": null
+                }
+            ],
+            "text": null,
+            "textAlign": "RIGHT",
+            "margin": 15,
+            "showLabel": false
+        },
+        {
+            "widgetType": "ImageWidget",
+            "title": null,
+            "height": 1,
+            "width": 2,
+            "minHeight": 0,
+            "minWidth": 0,
+            "x": 1,
+            "y": 0,
+            "label": null,
+            "description": null,
+            "drillDownUrl": null,
+            "useMetricBrowserAsDrillDown": true,
+            "drillDownActionType": null,
+            "backgroundColor": 16777215,
+            "backgroundColors": null,
+            "backgroundColorsStr": "16777215,16777215",
+            "color": 1646891,
+            "fontSize": 12,
+            "useAutomaticFontSize": false,
+            "borderEnabled": false,
+            "borderThickness": 0,
+            "borderColor": 14408667,
+            "backgroundAlpha": 1,
+            "showValues": false,
+            "formatNumber": true,
+            "numDecimals": 0,
+            "removeZeros": true,
+            "compactMode": false,
+            "showTimeRange": false,
+            "renderIn3D": false,
+            "showLegend": null,
+            "legendPosition": null,
+            "legendColumnCount": null,
+            "startTime": null,
+            "endTime": null,
+            "minutesBeforeAnchorTime": 15,
+            "isGlobal": true,
+            "propertiesMap": null,
+            "dataSeriesTemplates": null,
+            "imageURL": "https://vermaden.files.wordpress.com/2019/06/rabbitmq-logo-1.png"
+        }
+    ],
+    "warRoom": false,
+    "template": false
+}

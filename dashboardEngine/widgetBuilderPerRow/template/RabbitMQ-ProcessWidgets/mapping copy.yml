@@ -1,0 +1,42 @@
+dashboards:
+  - TITLE: "WIDGET BUILDER: QUEUES"
+    VALUES:
+      TEST1: "Test1"
+      TEST2: "Test1"
+    ROWS:
+      - WIDGET_TEXT:
+            YAXIS: 0
+            QUEUE: "queue name"
+        WIDGET_METRICLABEL:
+            YAXIS: 0
+            LABEL: "${v} -- <br> in backlog"
+            SERVER: "server"
+            SERVER_HIERARCHY: "Root|APP|LINUX"
+            CLUSTER: "cluster name"
+            GROUP: "group name"
+            QUEUE: "queue name"
+        WIDGET_PIE:
+            YAXIS: 0
+            SERVER: "server"
+            SERVER_HIERARCHY: "Root|APP|LINUX"
+            CLUSTER: "cluster name"
+            GROUP: "group name"
+            QUEUE: "queue name"
+      - WIDGET_TEXT:
+            YAXIS: 1
+            QUEUE: "queue name"
+        WIDGET_METRICLABEL:
+            YAXIS: 1
+            LABEL: "${v} -- <br> in backlog"
+            SERVER: "server"
+            SERVER_HIERARCHY: "Root|APP|LINUX"
+            CLUSTER: "cluster name"
+            GROUP: "group name"
+            QUEUE: "queue name"
+        WIDGET_PIE:
+            YAXIS: 1
+            SERVER: "server"
+            SERVER_HIERARCHY: "Root|APP|LINUX"
+            CLUSTER: "cluster name"
+            GROUP: "group name"
+            QUEUE: "queue name"

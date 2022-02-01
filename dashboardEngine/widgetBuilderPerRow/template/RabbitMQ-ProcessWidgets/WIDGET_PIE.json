@@ -1,0 +1,132 @@
+{
+    "widgetType": "PieWidget",
+    "title": "",
+    "height": 1,
+    "width": 3,
+    "minHeight": 0,
+    "minWidth": 0,
+    "x": 9,
+    "y": {YAXIS},
+    "label": null,
+    "description": null,
+    "drillDownUrl": null,
+    "useMetricBrowserAsDrillDown": true,
+    "drillDownActionType": null,
+    "backgroundColor": 16777215,
+    "backgroundColors": null,
+    "backgroundColorsStr": "16777215,16777215",
+    "color": 1646891,
+    "fontSize": 14,
+    "useAutomaticFontSize": false,
+    "borderEnabled": false,
+    "borderThickness": 0,
+    "borderColor": 14408667,
+    "backgroundAlpha": 1,
+    "showValues": true,
+    "formatNumber": true,
+    "numDecimals": 0,
+    "removeZeros": true,
+    "compactMode": false,
+    "showTimeRange": false,
+    "renderIn3D": false,
+    "showLegend": false,
+    "legendPosition": "POSITION_BOTTOM",
+    "legendColumnCount": 1,
+    "startTime": null,
+    "endTime": null,
+    "minutesBeforeAnchorTime": 15,
+    "isGlobal": true,
+    "propertiesMap": null,
+    "dataSeriesTemplates": [
+        {
+            "seriesType": "LINE",
+            "metricType": null,
+            "showRawMetricName": false,
+            "colorPalette": null,
+            "name": "Series 1",
+            "metricMatchCriteriaTemplate": {
+                "entityMatchCriteria": {
+                    "matchCriteriaType": "SpecificEntities",
+                    "entityType": "APPLICATION_COMPONENT_NODE",
+                    "agentTypes": null,
+                    "entityNames": [
+                        {
+                            "applicationName": "Server & Infrastructure Monitoring",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "entityName": "{SERVER}",
+                            "scopingEntityType": "APPLICATION_COMPONENT",
+                            "scopingEntityName": "{SERVER_HIERARCHY}",
+                            "subtype": null
+                        }
+                    ],
+                    "summary": false
+                },
+                "metricExpressionTemplate": {
+                    "metricExpressionType": "Logical",
+                    "functionType": "SUM",
+                    "displayName": "null",
+                    "inputMetricText": false,
+                    "inputMetricPath": null,
+                    "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{QUEUE}|Messages|Published Per Min"
+                },
+                "rollupMetricData": true,
+                "expressionString": "",
+                "useActiveBaseline": false,
+                "sortResultsAscending": false,
+                "maxResults": 20,
+                "evaluationScopeType": null,
+                "baselineName": null,
+                "applicationName": "Server & Infrastructure Monitoring",
+                "metricDisplayNameStyle": "DISPLAY_STYLE_CUSTOM",
+                "metricDisplayNameCustomFormat": "Published per Min [SUM]"
+            },
+            "axisPosition": null
+        },
+        {
+            "seriesType": "LINE",
+            "metricType": null,
+            "showRawMetricName": false,
+            "colorPalette": null,
+            "name": "Series 1 1",
+            "metricMatchCriteriaTemplate": {
+                "entityMatchCriteria": {
+                    "matchCriteriaType": "SpecificEntities",
+                    "entityType": "APPLICATION_COMPONENT_NODE",
+                    "agentTypes": null,
+                    "entityNames": [
+                        {
+                            "applicationName": "Server & Infrastructure Monitoring",
+                            "entityType": "APPLICATION_COMPONENT_NODE",
+                            "entityName": "{SERVER}",
+                            "scopingEntityType": "APPLICATION_COMPONENT",
+                            "scopingEntityName": "{SERVER_HIERARCHY}",
+                            "subtype": null
+                        }
+                    ],
+                    "summary": false
+                },
+                "metricExpressionTemplate": {
+                    "metricExpressionType": "Logical",
+                    "functionType": "SUM",
+                    "displayName": "null",
+                    "inputMetricText": false,
+                    "inputMetricPath": null,
+                    "relativeMetricPath": "Custom Metrics|RabbitMQ|{CLUSTER}|Queues|{GROUP}|{QUEUE}|Messages|Delivered (Total) Per Min"
+                },
+                "rollupMetricData": true,
+                "expressionString": "",
+                "useActiveBaseline": false,
+                "sortResultsAscending": false,
+                "maxResults": 20,
+                "evaluationScopeType": null,
+                "baselineName": null,
+                "applicationName": "Server & Infrastructure Monitoring",
+                "metricDisplayNameStyle": "DISPLAY_STYLE_CUSTOM",
+                "metricDisplayNameCustomFormat": "Delivered per Min [SUM]"
+            },
+            "axisPosition": null
+        }
+    ],
+    "showLabels": false,
+    "showPercentValues": null
+}

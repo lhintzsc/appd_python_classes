@@ -1,0 +1,39 @@
+AppdApiWrapper:
+  protocol: ${AD_API_WRAPPER_PROTOCOL:"https"}
+  port: ${AD_API_WRAPPER_PORT:"443"}
+  controller: ${AD_API_WRAPPER_CONTROLLER}
+  account: ${AD_API_WRAPPER_ACCOUNT}
+  apiUser: ${AD_API_WRAPPER_APIUSER}
+  apiSecret: ${AD_API_WRAPPER_SECRET}
+  encryption: ${AD_API_WRAPPER_ENCRYPTION:"False"}
+    
+AppdRbacHandler:
+  rbacReportDays: ${AD_RBAC_HANDLER_DAYS:"91"}
+  rbacReportAccount: ${AD_RBAC_HANDLER_ACCOUNT}
+  rbacReportExcel: ${AD_RBAC_HANDLER_EXCEL:"./RBAC-Users.xlsx"}
+
+OpsGenieApiWrapper:
+  apiKey: ${OPSGENIE_API_WRAPPER_APIKEY}
+  apiDomain: ${OPSGENIE_API_WRAPPER_APIDOMAIN:"api.eu.opsgenie.com"}
+  encryption: ${OPSGENIE_API_WRAPPER_ENCRYPTION:"False"}
+
+OpsGenieReportAdapter:
+  controllerLink: ${OPSGENIE_REPORT_ADAPTER_CONTROLLERLINK}
+  account: ${OPSGENIE_REPORT_ADAPTER_ACCOUNT}
+  severity: ${OPSGENIE_REPORT_ADAPTER_SEVERITY:"WARN"}
+  message: ${OPSGENIE_REPORT_ADAPTER_MESSAGE:"Title of Alert"}
+  description: ${OPSGENIE_REPORT_ADAPTER_DESCRIPTION}
+
+CommonBackgroundJob:
+  trigger: ${COMMON_BACKGROUND_JOB_TRIGGER:"interval"}
+  dayOfWeek: ${COMMON_BACKGROUND_JOB_DAYOFWEEK:""}
+  hour: ${COMMON_BACKGROUND_JOB_HOUR:"0"}
+  minute: ${COMMON_BACKGROUND_JOB_MINUTE:"0"}
+  timezone: ${COMMON_BACKGROUND_JOB_TIMEZONE:"Europe/Berlin"}
+  days: ${COMMON_BACKGROUND_JOB_DAYS:"0"}
+  hours: ${COMMON_BACKGROUND_JOB_HOURS:"0"}
+  minutes: ${COMMON_BACKGROUND_JOB_MINUTES:"0"}
+  seconds: ${COMMON_BACKGROUND_JOB_SECONDS:"30"}
+
+CommonLogService:
+  logConfig: "./logging.yaml"

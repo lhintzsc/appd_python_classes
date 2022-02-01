@@ -1,0 +1,16 @@
+LogSettings:
+  sink: ${LOGGING_SINK:"sys.stdout"}
+  format: "<green>{time}</green> | <level>{level}</level> | <magenta>{name}:{line}</magenta> : <level>{message}</level>"
+  level: ${LOGGING_LEVEL:"INFO"}
+  refreshFlag: True
+  refreshRate: ${LOGGING_REFRESH_RATE:"60"}
+  modules:
+    common.CommonLogService: False
+    common.CommonApiHelper: False
+    common.CommonEncryptionHelper: True
+    common.CommonBackgroundJob: True
+    appd.AppdApiWrapper: False
+    appd.AppdRbacHandler: True
+    opsgenie.OpsGenieApiWrapper: False
+    adapter.CommonJobAdapter: False
+    adapter.AppdRbacReportAdapter: True

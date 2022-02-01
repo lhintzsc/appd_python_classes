@@ -1,0 +1,132 @@
+kind: pipeline
+name: Create python tools for appdynamics
+
+steps:
+
+#- name: Create and publish base image python-pandas
+#  image: plugins/docker
+#
+#  settings:
+#    dockerfile: docker/python-pandas/Dockerfile
+#    username:
+#      from_secret: docker_username
+#    password:
+#      from_secret: docker_password
+#    repo: lhintzsc/python-pandas
+#    cache_from: lhintzsc/python-pandas:3.6.9
+#    tags: 3.6.9
+#    
+#  when:
+#    branch:
+#      - main
+#
+#- name: Create and publish base image python-falcon
+#  image: plugins/docker
+#
+#  settings:
+#    dockerfile: docker/python-falcon/Dockerfile
+#    username:
+#      from_secret: docker_username
+#    password:
+#      from_secret: docker_password
+#    repo: lhintzsc/python-falcon
+#    cache_from: lhintzsc/python-falcon:3.6.9
+#    tags: 3.6.9
+#    
+#  when:
+#    branch:
+#      - main
+
+- name: Create and publish base image python-rbac-service
+  image: plugins/docker
+
+  settings:
+    dockerfile: ./Dockerfile-AppdRbacContainer
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: lhintzsc/python-rbac-service
+    cache_from: lhintzsc/appd-rbac-service:3.6.9
+    tags: 3.6.9
+    
+  when:
+    branch:
+      - main
+
+#- name: Execute all pytests
+#  image: lhintzsc/python-pandas:3.6.9
+#  pull: if not exists
+#
+#  environment:
+#    APPD_CONTROLLER:
+#      from_secret: appd_controller
+#    APPD_ACCOUNT:
+#      from_secret: appd_account
+#    APPD_API_USER:
+#      from_secret: appd_api_user
+#    APPD_API_SECRET:
+#      from_secret: appd_api_secret
+#    APPD_PROTO: "https"
+#    APPD_PORT: "443"
+#    APPD_ENCRYPTION: "True"
+#    LOG_LEVEL: "DEBUG"
+#
+#  commands:
+#   - pytest -s ./tests/test_AppdApiWrapper.py
+#   - pytest -s ./tests/test_AppdRbacFunctions.py
+#  
+#  when:
+#    branch:
+#      - main
+#
+#- name: Test development stage
+#  image: lhintzsc/python-pandas:3.6.9
+#  pull: if not exists
+#
+#  environment:
+#    APPD_CONTROLLER:
+#      from_secret: appd_controller
+#    APPD_ACCOUNT:
+#      from_secret: appd_account
+#    APPD_API_USER:
+#      from_secret: appd_api_user
+#    APPD_API_SECRET:
+#      from_secret: appd_api_secret
+#    APPD_PROTO: "https"
+#    APPD_PORT: "443"
+#    APPD_ENCRYPTION: "True"
+#    LOG_LEVEL: "DEBUG"
+#
+#  commands:
+#   - pytest -s ./tests/test_development.py
+#
+#  when:
+#    branch:
+#      - development
+#
+#- name: Test webhook server
+#  image: lhintzsc/python-falcon:3.6.9
+#  pull: if not exists
+#
+#  environment:
+#    APPD_CONTROLLER:
+#      from_secret: appd_controller
+#    APPD_ACCOUNT:
+#      from_secret: appd_account
+#    APPD_API_USER:
+#      from_secret: appd_api_user
+#    APPD_API_SECRET:
+#      from_secret: appd_api_secret
+#    APPD_PROTO: "https"
+#    APPD_PORT: "443"
+#    APPD_ENCRYPTION: "True"
+#    LOG_LEVEL: "DEBUG"
+#
+#  commands:
+#   - gunicorn appd.AppdWebhookServer:app
+#   - curl --location --request POST 'http://127.0.0.1:8000/te/endpointagent/packet-loss'
+#
+#  when:
+#    branch:
+#      - development

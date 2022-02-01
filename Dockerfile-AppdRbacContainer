@@ -1,0 +1,15 @@
+FROM python:3.6.9
+ARG SERVICE_FOLDER="/AppdRbacService"
+# copy files
+ADD ./src/services/AppdRbacContainer/* ${SERVICE_FOLDER}/
+COPY ./src ${SERVICE_FOLDER}/src
+# set environment variables
+ENV PYTHONPATH "${SERVICE_FOLDER}/src"
+# install dependencies
+RUN pip install --upgrade pip
+RUN pip install -r ${SERVICE_FOLDER}/requirements.txt
+# starting point
+WORKDIR ${SERVICE_FOLDER}/
+ENTRYPOINT [ "python" ]
+CMD ["./AppdRbacContainer.py"]
+

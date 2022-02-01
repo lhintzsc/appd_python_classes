@@ -1,0 +1,59 @@
+TeWebBot:
+  email: ${TE_WEB_BOT_EMAIL}
+  password: ${TE_WEB_BOT_PASSWORD}
+  encryption: ${TE_WEB_BOT_ENCRYPTION:False}
+
+TeApiWrapper:
+  proto: ${TE_API_WRAPPER_PROTO:"https"}
+  port: ${TE_API_WRAPPER_PORT:"443"}
+  apiVersion: ${TE_API_WRAPPER_APIVERSION:"v6"}
+  apiEndpoint: ${TE_API_WRAPPER_ENDPOINT:"api.thousandeyes.com"}
+  apiUser: ${TE_API_WRAPPER_APIUSER}
+  apiTokenBearer: ${TE_API_WRAPPER_APITOKENBEARER}
+  encrpytion: ${TE_API_WRAPPER_ENCRYPTION:False}
+
+TeAlertHandler:
+  accountId: ${TE_ALERT_HANDLER_ACCOUNTID}
+
+AppdApiWrapper:
+  protocol: ${AD_API_WRAPPER_PROTOCOL:"https"}
+  port: ${AD_API_WRAPPER_PORT:"443"}
+  controller: ${AD_API_WRAPPER_CONTROLLER}
+  account: ${AD_API_WRAPPER_ACCOUNT}
+  apiUser: ${AD_API_WRAPPER_APIUSER}
+  apiSecret: ${AD_API_WRAPPER_SECRET}
+  encrpytion: ${AD_API_WRAPPER_ENCRYPTION:False}
+    
+AppdRbacHandler:
+  rbacReportDays: ${AD_RBAC_HANDLER_DAYS:"91"}
+  rbacReportAccount: ${AD_RBAC_HANDLER_ACCOUNT}
+  rbacReportExcel: ${AD_RBAC_HANDLER_EXCEL:"./RBAC-Users.xlsx"}
+
+DummyReportAdapter:
+  controllerLink: ${DUMMY_REPORT_ADAPTER_CONTROLLERLINK}
+  system: ${DUMMY_REPORT_ADAPTER_SYSTEM}
+  severity: ${DUMMY_REPORT_ADAPTER_SEVERITY:"WARN"}
+
+OpsGenieApiWrapper:
+  apiKey: ${OPSGENIE_API_WRAPPER_APIKEY}
+  apiDomain: ${OPSGENIE_API_WRAPPER_APIDOMAIN:"api.eu.opsgenie.com"}
+  encrpytion: ${OPSGENIE_API_WRAPPER_ENCRYPTION:False}
+
+OpsGenieReportAdapter:
+  controllerLink: ${DUMMY_REPORT_ADAPTER_CONTROLLERLINK}
+  system: ${DUMMY_REPORT_ADAPTER_SYSTEM}
+  severity: ${DUMMY_REPORT_ADAPTER_SEVERITY:"WARN"}
+
+CommonBackgroundJob:
+  trigger: ${COMMON_BACKGROUND_JOB_TRIGGER:"interval"}
+  dayOfWeek: ${COMMON_BACKGROUND_JOB_DAYOFWEEK:""}
+  hour: ${COMMON_BACKGROUND_JOB_HOUR:"0"}
+  minute: ${COMMON_BACKGROUND_JOB_MINUTE:"0"}
+  timezone: ${COMMON_BACKGROUND_JOB_TIMEZONE:"Europe/Berlin"}
+  days: ${COMMON_BACKGROUND_JOB_DAYS:"0"}
+  hours: ${COMMON_BACKGROUND_JOB_HOURS:"0"}
+  minutes: ${COMMON_BACKGROUND_JOB_MINUTES:"0"}
+  seconds: ${COMMON_BACKGROUND_JOB_SECONDS:"30"}
+
+CommonLogService:
+  logConfig: "./logging.yaml"

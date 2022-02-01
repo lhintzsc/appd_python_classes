@@ -1,0 +1,15 @@
+*.pyc
+*.xlsx*
+*.log*
+*.out*
+dashboardEngine/dashboardBuilder/output/*
+dashboardEngine/dashboardBuilder/template/*/mapping.yml
+dashboardEngine/widgetBuilderPerRow/output/*
+dashboardEngine/widgetBuilderPerRow/template/*/mapping.yml
+dashboardEngine/template/*/mapping.yml
+dashboardEngine/widgetBuilderPerRow/template/RabbitMQ-ProcessWidgets/source.json
+dashboardEngine/widgetBuilderPerRow/template/RabbitMQ-ListOfQueues/source.json
+cache/*
+venv/*
+config.yml
+src/services/AppdRbacContainer/docker_run.sh
