@@ -256,7 +256,16 @@ class AppdRbacHandler(CommonObjectPrinter):
             logins = logins + temp
         # create dataframe drop and rename columns
         dfLogins = pd.DataFrame().from_records(logins)
-        dfLogins.drop(["objectId","action"],axis=1,inplace=True)
+        #dfLogins.drop(["objectId","action","apiKeyId","apiKeyName"] ,axis=1,inplace=True)
+        
+        logger.debug(dfLogins.columns)
+        dfLogins.drop(
+            dfLogins.columns.difference(['timeStamp', 'auditDateTime', 'accountName', 'securityProviderType', 'userName']),
+            axis=1,
+            inplace=True
+        )
+        logger.debug(dfLogins.columns)
+
         dfLogins.columns = ["TIMESTAMP","LOGINTIME","ACCOUNT","PROVIDER","NAME"]
         # get lastest login date only
         dfLogins.set_index(["NAME","PROVIDER"],inplace=True)
